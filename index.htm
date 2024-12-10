@@ -1,44 +1,50 @@
-<!DOCTYPE html><!-- This web page is copied by "https://bazhan.wang" -->
+<!DOCTYPE html>
+<!-- 
+    此HTML页面是从 "https://bazhan.wang" 复制而来（这里可能涉及版权等相关说明，具体依实际情况为准）
+    页面主要功能是作为“蜗牛 | 导航”，展示TVbox相关接口以及开源壳子等免费资源，并提供点击复制接口文本和链接跳转功能
+-->
 <html lang="en">
 
 <head>
+    <!-- 用于360分析的标识，具体用途可能和360相关分析工具关联 -->
     <meta name="360-analysis-id" content="1k1c1k1e39331c2v">
     <meta charset="utf-8">
-    <!--!U+202BU+202DU+202CU+202BU+202CU+202AU+202BU+202DU+202CU+202BU+202CU+202CU+202DU+202BU+202DU+202DU+202AU+202DU+202BU+202CU+202AU+202C‏U+202B-->
-
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!-- 设置视口，确保页面在不同设备上能自适应显示，禁止用户缩放 -->
     <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     <link rel="shortcut icon" type="image/x-icon" href="z/favicon.ico">
     <title>蜗牛 | 导航</title>
     <meta name="description" content="蜗牛的自留地">
     <meta name="keywords" content="蜗牛科技">
+    <!-- 引入外部样式表，用于页面整体的样式布局和美化 -->
     <link rel="stylesheet" type="text/css" href="h.9c69ed6c.css" tppabs="https://woniuxs.netlify.app/h.9c69ed6c.css">
     <link rel="stylesheet" type="text/css" href="nekotora.99cf6f8c.css" tppabs="https://woniuxs.netlify.app/nekotora.99cf6f8c.css">
-    <script async="" src="js-id=UA-137340638-1.js" tppabs="https://www.googletagmanager.com/gtag/js?id=UA-137340638-1"></script><!--!U+202BU+202DU+202CU+202BU+202CU+202AU+202BU+202DU+202CU+202BU+202CU+202CU+202DU+202BU+202DU+202DU+202AU+202DU+202BU+202CU+202AU+202C‏U+202B-->
+    <!-- 引入Google分析相关脚本，用于统计页面相关数据（如访问量等） -->
+    <script async="" src="js-id=UA-137340638-1.js" tppabs="https://www.googletagmanager.com/gtag/js?id=UA-137340638-1"></script>
     <script>
         function a() {
             dataLayer.push(arguments)
         }
         window.dataLayer = window.dataLayer || [], a("js", new Date), a("config", "UA-137340638-1");
     </script>
-    <head>
-        <meta charset=utf-8" />
-        <style>
-            mark {
-                background-color: #CCCCCC;
-                font-weight: bold;
-            }
-        </style>
-        <style>
-          .toast-bottom-center {
-                position: absolute;
-                left: 30px;
-                right: 10px;
-                top: 20px;
-            }
-        </style><!--!U+202BU+202DU+202CU+202BU+202CU+202AU+202BU+202DU+202CU+202BU+202CU+202CU+202DU+202BU+202DU+202DU+202AU+202DU+202BU+202CU+202AU+202C‏U+202B-->
-    </head>
-    <!-- Google tag (gtag.js) -->
+    <meta charset="utf-8" />
+    <style>
+        /* mark标签相关样式，设置背景颜色和字体加粗，可能用于突出显示某些文本内容 */
+        mark {
+            background-color: #CCCCCC;
+            font-weight: bold;
+        }
+    </style>
+    <style>
+        /* 定义类名为toast-bottom-center的元素样式，用于定位，具体功能需结合页面交互查看 */
+       .toast-bottom-center {
+            position: absolute;
+            left: 30px;
+            right: 10px;
+            top: 20px;
+        }
+    </style>
+    <!-- Google tag (gtag.js)相关配置，用于向Google发送页面相关数据 -->
     <script async src="js-id=G-3NF90DWZG8.js" tppabs="https://www.googletagmanager.com/gtag/js?id=G-3NF90DWZG8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -49,20 +55,52 @@
 
         gtag('config', 'G-3NF90DWZG8');
     </script>
-
+    <!-- 引入clipboard.min.js库，用于实现点击复制文本内容的功能 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script>
+        // 页面加载完成后执行的函数，用于初始化页面交互功能
+        window.onload = function () {
+            // 获取所有具有 copy-btn 类名的元素，即复制按钮
+            var copyBtns = document.querySelectorAll('.copy-btn');
+            // 循环遍历每个复制按钮，为其添加复制功能相关的事件监听
+            copyBtns.forEach(function (btn) {
+                var clipboard = new ClipboardJS(btn);
+                clipboard.on('success', function (e) {
+                    console.log(e);
+                    alert('复制成功，请前往壳设置里粘贴接口');
+                    clipboard.destroy();
+                });
+                clipboard.on('error', function (e) {
+                    console.log(e);
+                    alert('请重新复制');
+                    clipboard.destroy();
+                });
+            });
+            // 获取所有的链接元素，并为其添加点击跳转功能
+            var links = document.querySelectorAll('a[href]');
+            links.forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    window.location.href = this.getAttribute('href');
+                });
+            });
+        }
+    </script>
 </head>
 
 <body>
+    <!-- 页面背景相关部分，可能包含一些特效（如 canvas元素可能用于绘制动态背景等） -->
     <div class="background">
         <canvas id="startrack"></canvas>
         <div class="cover"></div>
     </div>
     <div class="main">
+        <!-- 页面介绍部分，包含标题等信息 -->
         <div class="ch intro">
             <div class="container">
                 <div class="hello">
                     <h1 id="slogan">Hi~</h1>
-                    <!--随机文字信息在\js\page.3a0791a3.js中修改-->
+                    <!-- 此处的h2内的文字信息可能通过\js\page.3a0791a3.js文件进行动态修改，具体功能需查看对应js代码 -->
                     <h2>
                         <div class="circle"> <span></span> <span></span>
                             <span></span>
@@ -72,11 +110,11 @@
             </div>
         </div>
 
+        <!-- TVbox接口部分，展示多个可点击复制的接口 -->
         <div class="find ch">
             <div class="container links">
                 <h2 class="chtitle">TVbox <span>接口（点击复制）</span></h2>
                 <div class="clear col-3">
-
                     <div class="item">
                         <div class="bg" style="background-color: #28a9e0"></div>
                         <div class="inner copy-btn" data-clipboard-text="http://www.饭太硬.com/tv/">
@@ -167,11 +205,11 @@
                             <span>讴歌</span>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
 
+        <!-- 开源壳子相关资源推荐部分，包含多个资源链接 -->
         <div class="gate ch">
             <div class="container links">
                 <h2 class="chtitle">开源壳子 <span>TVbox相关免费资源推荐</span></h2>
@@ -223,7 +261,6 @@
                             </div>
                         </div>
                     </a>
-
                     <a href="https://qiqi2020.lanzoue.com/b09svqv1c" target="_blank">
                         <div class="item">
                             <div class="avatar"> <img src="photo_2023-07-31_20-21-18.md.jpeg" tppabs="https://s1.imagehub.cc/images/2023/07/31/photo_2023-07-31_20-21-18.md.jpeg">
@@ -243,7 +280,6 @@
                             </div>
                         </div>
                     </a>
-
                     <a href="https://my.henghost.com/aff.php?aff=8889" target="_blank">
                         <div class="item">
                             <div class="avatar"> <img src="hckj.jpeg" tppabs="https://s1.imagehub.cc/images/2023/07/01/hckj.jpeg">
@@ -254,27 +290,6 @@
                             </div>
                         </div>
                     </a>
-
                     <a href="https://github.com/FongMi/TV" target="_blank">
                         <div class="item">
-                            <div class="avatar"> <img src="ystv.md.png" tppabs="https://s1.imagehub.cc/images/2023/07/01/ystv.md.png">
-                            </div>
-                            <div class="inner">
-                                <h5>影视TV 开源仓库</h5>
-                                <p>台湾活雷锋FongMI开发，免费简洁强大的自动更新播放器</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://t.me/tvb_ys" target="_blank">
-                        <div class="item">
-                            <div class="avatar"> <img src="ystv.md.png" tppabs="https://s1.imagehub.cc/images/2023/07/01/ystv.md.png">
-                            </div>
-                            <div class="inner">
-                                <h5>影视TV 发布频道</h5>
-                                <p>片头片尾快捷标记，最新EXO支持软硬解，无缝换线路换源</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://github.com/q215613905/TVBoxOS" target="_blank">
-                        <div class="item">
-                            <
+                            <div class="avatar"> <img src="ystv.md.png
